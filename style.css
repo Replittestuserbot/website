@@ -1,17 +1,18 @@
 body {
-  background-color: #f0f8ff;
+  background-color: #000000; /* black */
   font-family: Arial, sans-serif;
   text-align: center;
   padding-top: 50px;
+  color: white; /* make text visible on black */
 }
 
 h1 {
-  color: #3498db;
+  color: #00bfff; /* light blue for contrast */
   font-size: 3em;
 }
 
 p {
-  color: #555;
+  color: #ccc; /* light gray for better readability */
   font-size: 1.2em;
   margin-bottom: 30px;
 }
