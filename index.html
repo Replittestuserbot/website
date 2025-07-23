@@ -13,10 +13,31 @@
   <h1>Starter</h1>
   <p>Choose one of The Websites Below</p>
 
-  <div class="button-container">
+  <!-- 🔍 Search Bar -->
+  <input type="text" id="searchInput" placeholder="Search for a website..." onkeyup="filterButtons()">
+
+  <!-- 🌐 Buttons -->
+  <div class="button-container" id="buttonContainer">
     <a href="https://www.google.com" target="_blank" class="button">Go to Google</a>
     <a href="https://rule34.xxx" target="_blank" class="button">Go to Rules</a>
     <a href="https://pornhub.com" target="_blank" class="button">Visit Hub</a>
   </div>
+
+  <!-- 🔍 Script -->
+  <script>
+    function filterButtons() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const buttons = document.querySelectorAll('#buttonContainer .button');
+      
+      buttons.forEach(button => {
+        const text = button.textContent.toLowerCase();
+        if (text.includes(input)) {
+          button.classList.remove('hidden');
+        } else {
+          button.classList.add('hidden');
+        }
+      });
+    }
+  </script>
 </body>
 </html>
