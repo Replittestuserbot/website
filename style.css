@@ -1,9 +1,9 @@
 body {
-  background-color: #000000; /* black */
+  background-color: #000000; /* black background */
   font-family: Arial, sans-serif;
   text-align: center;
   padding-top: 50px;
-  color: white; /* make text visible on black */
+  color: white; /* default text color */
 }
 
 h1 {
@@ -12,7 +12,7 @@ h1 {
 }
 
 p {
-  color: #ccc; /* light gray for better readability */
+  color: #ccc; /* light gray */
   font-size: 1.2em;
   margin-bottom: 30px;
 }
@@ -25,15 +25,16 @@ p {
 }
 
 .button {
-  background-color: #3498db;
+  background-color: #1a1a1a; /* slightly lighter than black */
   color: white;
   padding: 12px 25px;
   text-decoration: none;
   border-radius: 8px;
   font-size: 1em;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .button:hover {
-  background-color: #2980b9;
+  background-color: #333333; /* a little brighter on hover */
+  transform: scale(1.05); /* slight zoom effect */
 }
