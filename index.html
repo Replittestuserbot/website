@@ -13,22 +13,45 @@
     <input type="text" id="search" placeholder="Search links..." onkeyup="filterLinks()">
 
     <div class="links" id="linkContainer">
-      <a href="https://www.google.com" target="_blank" class="link-button">Google</a>
-      <a href="https://youtube.com" target="_blank" class="link-button">YouTube</a>
-      <a href="https://discord.com" target="_blank" class="link-button">Discord</a>
-      <a href="https://github.com" target="_blank" class="link-button">GitHub</a>
+
+      <div class="link-group">
+        <a href="https://www.google.com" target="_blank" class="link-button" onclick="showText('text1')">Google</a>
+        <div id="text1" class="hidden-text">You clicked Google!</div>
+      </div>
+
+      <div class="link-group">
+        <a href="https://youtube.com" target="_blank" class="link-button" onclick="showText('text2')">YouTube</a>
+        <div id="text2" class="hidden-text">You clicked YouTube!</div>
+      </div>
+
+      <div class="link-group">
+        <a href="https://discord.com" target="_blank" class="link-button" onclick="showText('text3')">Discord</a>
+        <div id="text3" class="hidden-text">You clicked Discord!</div>
+      </div>
+
+      <div class="link-group">
+        <a href="https://github.com" target="_blank" class="link-button" onclick="showText('text4')">GitHub</a>
+        <div id="text4" class="hidden-text">You clicked GitHub!</div>
+      </div>
+
     </div>
   </div>
 
   <script>
     function filterLinks() {
       const input = document.getElementById("search").value.toLowerCase();
-      const links = document.querySelectorAll("#linkContainer .link-button");
+      const groups = document.querySelectorAll("#linkContainer .link-group");
 
-      links.forEach(link => {
+      groups.forEach(group => {
+        const link = group.querySelector(".link-button");
         const text = link.textContent.toLowerCase();
-        link.style.display = text.includes(input) ? "inline-block" : "none";
+        group.style.display = text.includes(input) ? "block" : "none";
       });
+    }
+
+    function showText(id) {
+      const box = document.getElementById(id);
+      box.style.display = box.style.display === "block" ? "none" : "block";
     }
   </script>
 </body>
