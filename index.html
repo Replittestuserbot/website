@@ -1,41 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Starter Website</title>
+  <meta charset="UTF-8">
+  <title>Hacks</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    html {
-      overflow-y: scroll; /* Always show vertical scrollbar */
-    }
-  </style>
 </head>
 <body>
-  <h1>Starter</h1>
-  <p>Choose one of The Websites Below</p>
+  <div class="container">
+    <h1>🌐 My Test Hub</h1>
+    <p>Click below to visit your favorite websites.</p>
 
-  <!-- 🔍 Search Bar -->
-  <input type="text" id="searchInput" placeholder="Search for a website..." onkeyup="filterButtons()">
+    <input type="text" id="search" placeholder="Search links..." onkeyup="filterLinks()">
 
-  <!-- 🌐 Buttons -->
-  <div class="button-container" id="buttonContainer">
-    <a href="https://www.google.com" target="_blank" class="button">Go to Google</a>
-    <a href="https://rule34.xxx" target="_blank" class="button">Go to Rules</a>
-    <a href="https://pornhub.com" target="_blank" class="button">Visit Hub</a>
+    <div class="links" id="linkContainer">
+      <a href="https://www.google.com" target="_blank" class="link-button">Google</a>
+      <a href="https://youtube.com" target="_blank" class="link-button">YouTube</a>
+      <a href="https://discord.com" target="_blank" class="link-button">Discord</a>
+      <a href="https://github.com" target="_blank" class="link-button">GitHub</a>
+    </div>
   </div>
 
-  <!-- 🔍 Script -->
   <script>
-    function filterButtons() {
-      const input = document.getElementById('searchInput').value.toLowerCase();
-      const buttons = document.querySelectorAll('#buttonContainer .button');
-      
-      buttons.forEach(button => {
-        const text = button.textContent.toLowerCase();
-        if (text.includes(input)) {
-          button.classList.remove('hidden');
-        } else {
-          button.classList.add('hidden');
-        }
+    function filterLinks() {
+      const input = document.getElementById("search").value.toLowerCase();
+      const links = document.querySelectorAll("#linkContainer .link-button");
+
+      links.forEach(link => {
+        const text = link.textContent.toLowerCase();
+        link.style.display = text.includes(input) ? "inline-block" : "none";
       });
     }
   </script>
