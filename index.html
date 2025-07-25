@@ -15,44 +15,45 @@
     <div class="links" id="linkContainer">
 
       <div class="link-group">
-        <a href="https://www.google.com" target="_blank" class="link-button" onclick="showText('text1')">Google</a>
-        <div id="text1" class="hidden-text">You clicked Google!</div>
+        <a href="#" class="link-button" onclick="toggleTextbox('text1')">Google</a>
+        <div id="text1" class="textbox">Google is the most popular search engine.</div>
       </div>
 
       <div class="link-group">
-        <a href="https://youtube.com" target="_blank" class="link-button" onclick="showText('text2')">YouTube</a>
-        <div id="text2" class="hidden-text">You clicked YouTube!</div>
+        <a href="#" class="link-button" onclick="toggleTextbox('text2')">YouTube</a>
+        <div id="text2" class="textbox">YouTube is a video-sharing platform for everything.</div>
       </div>
 
       <div class="link-group">
-        <a href="https://discord.com" target="_blank" class="link-button" onclick="showText('text3')">Discord</a>
-        <div id="text3" class="hidden-text">You clicked Discord!</div>
+        <a href="#" class="link-button" onclick="toggleTextbox('text3')">Discord</a>
+        <div id="text3" class="textbox">Discord is used for chatting, communities, and servers.</div>
       </div>
 
       <div class="link-group">
-        <a href="https://github.com" target="_blank" class="link-button" onclick="showText('text4')">GitHub</a>
-        <div id="text4" class="hidden-text">You clicked GitHub!</div>
+        <a href="#" class="link-button" onclick="toggleTextbox('text4')">GitHub</a>
+        <div id="text4" class="textbox">GitHub is for sharing and collaborating on code projects.</div>
       </div>
 
     </div>
   </div>
 
   <script>
-    function filterLinks() {
-      const input = document.getElementById("search").value.toLowerCase();
-      const groups = document.querySelectorAll("#linkContainer .link-group");
-
-      groups.forEach(group => {
-        const link = group.querySelector(".link-button");
-        const text = link.textContent.toLowerCase();
-        group.style.display = text.includes(input) ? "block" : "none";
-      });
-    }
-
-    function showText(id) {
+    function toggleTextbox(id) {
       const box = document.getElementById(id);
       box.style.display = box.style.display === "block" ? "none" : "block";
     }
+
+    function filterLinks() {
+      const input = document.getElementById("search").value.toLowerCase();
+      const groups = document.querySelectorAll(".link-group");
+
+      groups.forEach(group => {
+        const button = group.querySelector(".link-button");
+        const text = button.textContent.toLowerCase();
+        group.style.display = text.includes(input) ? "block" : "none";
+      });
+    }
   </script>
 </body>
+</html>
 </html>
